@@ -7,7 +7,6 @@
 	</head>
 	<body>
 		<h3>내장객체 값 확인</h3>
-		
 		<p>
 			pageContext 값 : <%= pageContext.getAttribute("name") %><br>
 			request 값 : <%= request.getAttribute("name") %><br>

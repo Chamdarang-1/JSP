@@ -24,7 +24,7 @@
 	
 	if(vo != null){
 		//자동 로그인 처리
-		if(auto.equals("true")){
+		if(auto != null){
 			
 			// 사용자 아이디로 auto 쿠키 생성
 			Cookie autoCookie = new Cookie("auto", id);

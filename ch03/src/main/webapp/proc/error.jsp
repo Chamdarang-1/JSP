@@ -15,7 +15,7 @@
 		
 		%>
 		<p>
-			결과 : <% result %>
+			결과 : <%= result %>
 		</p>
 	</body>
 </html>
