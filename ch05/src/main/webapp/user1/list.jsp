@@ -15,23 +15,23 @@
 	List<User1VO> users = new ArrayList<>();
 
 	try{
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager.getConnection(host, user, pass);
+		Class.forName("oracle.jdbc.driver.OracleDriver"); // 오라클 드라이버를 메모리에 등록
+		Connection conn = DriverManager.getConnection(host, user, pass); //DB에 실제로 접속
 		
-		Statement stmt = conn.createStatement();
+		Statement stmt = conn.createStatement(); //SQL문을 실행할 수 있는 객체 생성
 		
-		String sql = "SELECT * FROM USER1";
-		ResultSet rs = stmt.executeQuery(sql);
+		String sql = "SELECT * FROM USER1"; 
+		ResultSet rs = stmt.executeQuery(sql);// SQL을 실행해서 결과를 받아옴
 		
 		while(rs.next()){
 			
 			User1VO vo = new User1VO();
-			vo.setUser_id(rs.getString(1));
+			vo.setUser_id(rs.getString(1));// rs.getString(1)은 첫번째 컬럼값, 즉 USER_ID(SQL)를 꺼내는 것
 			vo.setName(rs.getString(2));
 			vo.setHp(rs.getString(3));
 			vo.setAge(rs.getInt(4));
 			
-			users.add(vo);
+			users.add(vo); // 한 줄씩 데이터를 꺼내서 User1VO 객체로 만들고 users 리스트에 담는 과정 
 		}
 	
 		rs.close();
@@ -73,8 +73,9 @@
 				<td><%= user1VO.getHp() %></td>
 				<td><%= user1VO.getAge() %></td>
 				<td>
-					<a href = "./modify.jsp">수정</a>
-					<a href = "#">삭제</a>
+					<!-- 수정하고자 하는 사용자 아이디를 modify.jsp로 전송 -->
+					<a href = "./modify.jsp?user_id=<%=user1VO.getUser_id()%>">수정</a>
+					<a href = "./delete.jsp?user_id=<%= user1VO.getUser_id()%>">삭제</a>
 				</td>
 			</tr>	
 			<% } %>
