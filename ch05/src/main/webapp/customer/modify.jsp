@@ -10,36 +10,38 @@
 
 	String cid = request.getParameter("cid");
 
+	CustomerDTO customer = null;
+	
 	try{
 	// DBCP 커넥션 풀 가져오기
 		Context ctx = (Context) new InitialContext().lookup("java:comp/env"); // java 기본 환경 객체
 		DataSource ds =(DataSource) ctx.lookup("jdbc/joseph8034"); // jdbc/joseph8034 커넥션 풀 객체 검색
 	
-			Connection conn = ds.getConnection();
-			
-			String sql = "SELECT * FROM CUSTOMER WHERE CID=?";
-			PreparedStatement psmt = conn.prepareStatement(sql);
-			psmt.setString(1, cid);
-			
-			ResultSet rs = psmt.executeQuery();
-			
-			if(rs.next()){
-				customer = new CustomerDTO();
-				customer.setCid(rs.getString(1));
-				customer.setName(rs.getString(2));
-				customer.setHp(rs.getString(3));
-				customer.setAddress(rs.getString(4));
-				customer.setRdate(rs.getString(5));
-			}
-			
-			rs.close();
-			psmt.close();
-			conn.close();	
-			
-		}catch(Exception e){
-			e.printStackTrace();
+		Connection conn = ds.getConnection();
+		
+		String sql = "SELECT * FROM CUSTOMER WHERE CID=?";
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setString(1, cid);
+		
+		ResultSet rs = psmt.executeQuery();
+		
+		if(rs.next()){
+			customer = new CustomerDTO();
+			customer.setCid(rs.getString(1));
+			customer.setName(rs.getString(2));
+			customer.setHp(rs.getString(3));
+			customer.setAddress(rs.getString(4));
+			customer.setRdate(rs.getString(5));
 		}
 		
+		rs.close();
+		psmt.close();
+		conn.close();	
+		
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	
 
 %>
 
