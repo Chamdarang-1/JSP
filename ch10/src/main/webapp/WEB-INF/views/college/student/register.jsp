@@ -15,7 +15,7 @@
 			<table border="1">
 				<tr>
 					<td>학번</td>
-					<td><input type="text" name="stdno" placeholder="학번 입력"/></td>
+					<td><input type="text" name="stdNo" placeholder="학번 입력"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
@@ -31,12 +31,12 @@
 						<select name = "major">
 							<option>국문학과</option>
 							<option>영문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
+							<option>경제학과</option>
+							<option>컴퓨터학과</option>
+							<option>경영학과</option>
+							<option>심리학과</option>
+							<option>지리학과</option>
+							<option>수학과</option>
 						</select>
 					</td>
 				</tr>

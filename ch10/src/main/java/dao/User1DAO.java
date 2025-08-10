@@ -22,7 +22,6 @@ public class User1DAO extends DBHelper {
 	public void insertUser1(User1DTO dto) {
 		
 		try {
-			
 			conn = getConnection(DBCP);
 			
 			String sql = "INSERT INTO user1 values (?,?,?,?)";
@@ -33,6 +32,7 @@ public class User1DAO extends DBHelper {
 			psmt.setInt(4, dto.getAge());			
 			psmt.executeUpdate();
 			closeAll();
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}		

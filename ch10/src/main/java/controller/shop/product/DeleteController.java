@@ -1,37 +1,38 @@
-package controller.college.student;
+package controller.shop.product;
 
 import java.io.IOException;
 
+import dto.shop.ProductDTO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.college.StudentService;
+import service.shop.ProductService;
 
-@WebServlet("/college/student/delete.do")
+@WebServlet("/shop/product/delete.do")
 public class DeleteController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
-	// 서비스 객체 가져오기
-	private StudentService service = StudentService.INSTANCE;
-	
+	private ProductService service = ProductService.INSTANCE;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String stdno = req.getParameter("stdNo");
+		String pno = req.getParameter("pno");
 		
-		service.delete(stdno);
+		service.delete(pno);
 		
-		resp.sendRedirect("/ch10/college/student/list.do");
-		}
-		
+		resp.sendRedirect("/ch10/shop/product/list.do");
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
 	}
-
+	
 	
 }

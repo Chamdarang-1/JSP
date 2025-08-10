@@ -137,7 +137,6 @@ public class CustomerDAO extends DBHelper {
 		
 		try {
 			conn=getConnection(DBCP);
-			
 			String sql = "DELETE FROM CUSTOMER WHERE cid=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, cid);

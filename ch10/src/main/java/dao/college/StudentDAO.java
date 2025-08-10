@@ -9,10 +9,10 @@ import util.DBHelper;
 public class StudentDAO extends DBHelper {
 	
 	private static final StudentDAO INSTANCE = new StudentDAO();
+	
 	public static StudentDAO getInstance() {
 		return INSTANCE;
 	}
-
 	private StudentDAO() {}
 
 	private final String DBCP = "jdbc/college";
@@ -37,7 +37,7 @@ public class StudentDAO extends DBHelper {
 			
 			
 		}
-		public StudentDTO selectStudent(String stdno) {
+		public StudentDTO selectStudent(String stdNo) {
 			
 			StudentDTO dto = null;
 			
@@ -45,7 +45,7 @@ public class StudentDAO extends DBHelper {
 				conn = getConnection(DBCP);
 				String sql = "SELECT * FROM STUDENT WHERE STDNO = ?";
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, stdno);
+				psmt.setString(1, stdNo);
 				
 				rs = psmt.executeQuery();
 				
@@ -57,6 +57,7 @@ public class StudentDAO extends DBHelper {
 					dto.setMajor(rs.getString(4));
 					dto.setEnr_date(rs.getString(5));
 				}
+				closeAll();
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -65,25 +66,21 @@ public class StudentDAO extends DBHelper {
 		}
 		public List<StudentDTO> selectAllStudent() {
 			
-			StudentDTO dto = null;
-			
 			List<StudentDTO> dtoList = new ArrayList<StudentDTO>();
 			
 			try {
 				conn = getConnection(DBCP);
 				stmt = conn.createStatement();
 				
-				String sql = "SELECT * FROM STUDENT";
-				rs = stmt.executeQuery(sql);
+				rs = stmt.executeQuery("SELECT * FROM STUDENT");
 				
 				while(rs.next()) {
-					dto= new StudentDTO();
+					StudentDTO dto = new StudentDTO();
 					dto.setStdNo(rs.getString(1));
 					dto.setName(rs.getString(2));
 					dto.setBirth(rs.getString(3));
 					dto.setMajor(rs.getString(4));
 					dto.setEnr_date(rs.getString(5));
-					
 					dtoList.add(dto);
 				}
 				closeAll();
@@ -113,12 +110,12 @@ public class StudentDAO extends DBHelper {
 				e.printStackTrace();
 			}
 		}
-		public void deleteStudent(String stdno) {
+		public void deleteStudent(String stdNo) {
 			try {
 				conn = getConnection(DBCP);
 				String sql = "DELETE FROM STUDENT WHERE STDNO=?";
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, stdno);
+				psmt.setString(1, stdNo);
 				
 				psmt.executeUpdate();
 				

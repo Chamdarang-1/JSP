@@ -21,16 +21,16 @@
 				<th>회사</th>
 				<th>관리</th>
 			</tr>
-			<c:forEach var = "product" items="${dtoList}">
+			<c:forEach var = "dto" items="${dtoList}">
 			<tr>
-				<td>${customer.pno}</td>
-				<td>${customer.pname}</td>
-				<td>${customer.stock}</td><!-- 표현언어에서 getter 호출 안하고 직접 속성 참조해서 출력 가능 -->
-				<td>${customer.price}</td>
-				<td>${customer.company}</td>
+				<td>${dto.pno}</td>
+				<td>${dto.pname}</td>
+				<td>${dto.stock}</td><!-- 표현언어에서 getter 호출 안하고 직접 속성 참조해서 출력 가능 -->
+				<td>${dto.price}</td>
+				<td>${dto.company}</td>
 				<td>					
-					<a href="#">수정</a>					
-					<a href="# ">삭제</a>
+					<a href="/ch10/shop/product/modify.do?pno=${dto.pno}">수정</a>					
+					<a href="/ch10/shop/product/delete.do?pno=${dto.pno}">삭제</a>
 				</td>
 			</tr>
 			</c:forEach>

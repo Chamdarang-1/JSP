@@ -4,8 +4,8 @@ public class ProductDTO {
 	
 	private String pno; 
 	private String pname;
-	private String stock;
-	private String price; 
+	private int stock;
+	private int price; 
 	private String company;
 	
 	public String getPno() {
@@ -20,17 +20,27 @@ public class ProductDTO {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public String getStock() {
+	public int getStock() {
 		return stock;
 	}
-	public void setStock(String stock) {
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	public String getPrice() {
+	public void setStock(String stock) {
+		if(stock != null) {
+		this.stock = Integer.parseInt(stock);
+		}
+	}
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
+	}
+	public void setPrice(String price) {
+		if(price != null) {
+		this.price = Integer.parseInt(price);
+		}
 	}
 	public String getCompany() {
 		return company;
