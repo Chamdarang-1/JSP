@@ -22,9 +22,9 @@ public class ModifyController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String stdno = req.getParameter("stdNo");
+		String stdNo = req.getParameter("stdNo");
 		
-		StudentDTO studentDTO =service.findById(stdno);
+		StudentDTO studentDTO =service.findById(stdNo);
 		
 		req.setAttribute("studentDTO", studentDTO);
 		
@@ -36,14 +36,14 @@ public class ModifyController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	String stdno = req.getParameter("stdNo");
+	String stdNo = req.getParameter("stdNo");
 	String name = req.getParameter("name");
 	String birth = req.getParameter("birth");
 	String major = req.getParameter("major");
 	String enr_date = req.getParameter("enr_date");
 	
 	StudentDTO dto = new StudentDTO();
-	dto.setStdNo(stdno);
+	dto.setStdNo(stdNo);
 	dto.setName(name);
 	dto.setBirth(birth);
 	dto.setMajor(major);

@@ -93,7 +93,7 @@ public class StudentDAO extends DBHelper {
 		public void updateStudent(StudentDTO dto) {
 			try {
 				conn = getConnection(DBCP);
-				String sql = "UPDATE STUDENT SET name=?, birth=?, major=? WHERE STDNO=?";
+				String sql = "UPDATE STUDENT SET NAME=?, BIRTH=?, MAJOR=? WHERE STDNO=?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, dto.getName());
 				psmt.setString(2, dto.getBirth());

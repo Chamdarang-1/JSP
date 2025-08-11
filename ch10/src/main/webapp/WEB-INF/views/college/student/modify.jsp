@@ -15,7 +15,7 @@
 			<table border="1">
 				<tr>
 					<td>학번</td>
-					<td><input type="text" name="stdNo" readonly value="${studentDTO.stdNo}" placeholder="아이디 입력"/></td>
+					<td><input type="text" name="stdNo" readonly value="${studentDTO.stdNo}"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
