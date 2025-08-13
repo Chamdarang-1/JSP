@@ -36,6 +36,7 @@
 		
 		<h4>College</h4>
 		<a href = "/ch10/college/student/list.do">STUDENT CRUD</a>
+		<a href = "/ch10/college/course/list.do">COURSE CRUD</a>
 		
 		<h4>User(MySQL)</h4>
 		<a href= "/ch10/user1/list.do">user1 CRUD</a>

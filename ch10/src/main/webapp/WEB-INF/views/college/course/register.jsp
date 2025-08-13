@@ -3,46 +3,30 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>College/Student::register</title>
+		<title>College/Course::register</title>
 	</head>
 	<body>
-		<h3>College/Student 등록</h3>
+		<h3>College/Course 등록</h3>
 		
 		<a href="/ch10">처음으로</a>
-		<a href="/ch10/college/student/list.do">목록이동</a>
+		<a href="/ch10/college/course/list.do">목록이동</a>
 		
-		<form action="/ch10/college/student/register.do" method="post">
+		<form action="/ch10/college/course/register.do" method="post">
 			<table border="1">
 				<tr>
-					<td>학번</td>
+					<td>수강번호</td>
 					<td><input type="text" name="stdno" placeholder="학번 입력"/></td>
 				</tr>
 				<tr>
-					<td>이름</td>
+					<td>강의명</td>
 					<td><input type="text" name="name" placeholder="이름 입력"/></td>
 				</tr>
 				<tr>
-					<td>생년월일</td>
+					<td>학점</td>
 					<td><input type="date" name="birth" /></td>
 				</tr>
 				<tr>
-					<td>전공</td>
-					<td>
-						<select name = "major">
-							<option>국문학과</option>
-							<option>영문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-							<option>국문학과</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>입학일</td>
-					<td><input type="date" name="enr_date"/></td>
+					<td>개설학과</td>
 				</tr>
 				<tr>					
 					<td colspan="2" align="right">
