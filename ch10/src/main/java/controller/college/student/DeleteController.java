@@ -21,9 +21,9 @@ public class DeleteController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String stdno = req.getParameter("stdNo");
+		String stdNo = req.getParameter("stdNo");
 		
-		service.delete(stdno);
+		service.delete(stdNo);
 		
 		resp.sendRedirect("/ch10/college/student/list.do");
 		}

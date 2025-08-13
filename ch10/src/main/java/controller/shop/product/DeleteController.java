@@ -2,8 +2,6 @@ package controller.shop.product;
 
 import java.io.IOException;
 
-import dto.shop.ProductDTO;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
