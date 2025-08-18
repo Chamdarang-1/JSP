@@ -36,7 +36,8 @@ public class RequestController extends HttpServlet {
 		RegisterDTO dto = new RegisterDTO();
 		dto.setRegStdNo(stdNo);
 		dto.setRegLecNo(lecNo);
-				
+
+		System.out.println("dto :" + dto);
 		// 서비스 요청
 		service.regist(dto);
 		
