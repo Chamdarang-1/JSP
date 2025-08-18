@@ -40,6 +40,8 @@ public class RegisterController extends HttpServlet {
 		dto.setLecTime(lecTime);
 		dto.setLecClass(lecClass);
 		
+		System.out.println("dto :"+  dto);
+		
 		service.regist(dto);
 		
 		resp.sendRedirect("/ErdCollege/lecture/list.do");

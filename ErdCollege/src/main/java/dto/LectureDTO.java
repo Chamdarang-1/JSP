@@ -40,7 +40,7 @@ public class LectureDTO {
 	
 	public void setLecCredit(String lecCredit) {
 		if(lecCredit != null) {
-		this.lecNo = Integer.parseInt(lecCredit);
+		this.lecCredit = Integer.parseInt(lecCredit);
 		}
 	}
 	
@@ -54,7 +54,7 @@ public class LectureDTO {
 	
 	public void setLecTime(String lecTime) {
 		if(lecTime != null) {
-		this.lecNo = Integer.parseInt(lecTime);
+		this.lecTime = Integer.parseInt(lecTime);
 			}
 		}
 	public String getLecClass() {

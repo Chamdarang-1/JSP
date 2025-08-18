@@ -30,6 +30,7 @@
 					<td>${dto.lecClass}</td>
 					<td>
 						<a href="/ErdCollege/register/request.do?lecNo=${dto.lecNo}">수강신청</a>
+						<a href="/ErdCollege/delete/request.do?lecNo=${dto.lecNo}">수강취소</a>
 					</td>
 				</tr>
 			</c:forEach>	
