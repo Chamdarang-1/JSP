@@ -1,37 +1,40 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user2::list</title>
+		<title>user2::register</title>
 	</head>
 	<body>
-		<h3>User2 목록</h3>
+		<h3>User2 등록</h3>
 		
-		<a href="/ch9">처음으로</a>
-		<a href="/ch09/user2/list.do">목록 이동</a>
+		<a href="/ch09">처음으로</a>
+		<a href="/ch09/user2/list.do">목록이동</a>
 		
-		<table border="1">
-			<tr>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>휴대폰</th>
-				<th>나이</th>
-				<th>관리</th>
-			</tr>
-			<c:forEach var="dto" items="${requestScope.dtoList}"><!-- Controller에서 request 객체로 setAttribute 저장한 dtoList -->
-			<tr>
-				<td>${dto.user_id()}</td>
-				<td>${dto.name()}</td>
-				<td>${dto.hp}</td><!-- 표현언어에서 getter 호출 안하고 직접 속성 참조해서 출력 가능 -->
-				<td>${dto.age}</td>
-				<td>					
-					<a href="/ch09/user2/modify.do?user_id=${dto.user_id}">수정</a>					
-					<a href="/ch09/user2/delete.do?user_id=${dto.user_id}">삭제</a>
-				</td>
-			</tr>
-			</c:forEach>
-		</table>		
+		<form action="/ch09/user2/register.do" method="post">
+			<table border="1">
+				<tr>
+					<td>아이디</td>
+					<td><input type="text" name="user_id" placeholder="아이디 입력"/></td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="name" placeholder="이름 입력"/></td>
+				</tr>
+				<tr>
+					<td>휴대폰</td>
+					<td><input type="text" name="hp" placeholder="휴대폰 입력(- 포함)"/></td>
+				</tr>
+				<tr>
+					<td>나이</td>
+					<td><input type="number" name="age" placeholder="숫자 입력"/></td>
+				</tr>
+				<tr>					
+					<td colspan="2" align="right">
+						<input type="submit" value="등록하기"/>
+					</td>
+				</tr>			
+			</table>		
+		</form>
 	</body>
 </html>

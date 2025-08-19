@@ -22,8 +22,8 @@
 			</tr>
 			<c:forEach var="dto" items="${requestScope.dtoList}"><!-- Controller에서 request 객체로 setAttribute 저장한 dtoList -->
 			<tr>
-				<td>${dto.getUser_id()}</td>
-				<td>${dto.getName()}</td>
+				<td>${dto.user_id}</td>
+				<td>${dto.name}</td>
 				<td>${dto.hp}</td><!-- 표현언어에서 getter 호출 안하고 직접 속성 참조해서 출력 가능 -->
 				<td>${dto.age}</td>
 				<td>					
