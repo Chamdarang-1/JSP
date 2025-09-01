@@ -40,5 +40,7 @@
 		
 		<h4>USER7 CRUD</h4>
 		<a href = "/ch09/user7/list.do">user7 목록</a>
+		
+		<a href = "/ch09/js/user1/list.do">js</a>
 	</body>
 </html>
