@@ -31,23 +31,24 @@
 					})
 						.then(res => res.json())
 						.then(data => {
+							// 서버에서 전송된 JSON 데이터							
 							console.log(data);
+							
+							if(data.result > 0){
+								alert('등록 성공!');								
+							}else {
+								alert('등록 실패!');								
+							}
+							
+							// 목록 이동
+							location.href = '/ch09/js/user1/list.do';
 						})
 						.catch(err => {
 							console.log(err);
 						});
-					
-					
-					
-					
-				});
-				
+				});				
 			});
-		
-		
-		</script>
-		
-		
+		</script>		
 	</head>
 	<body>
 		<h3>JS/User1 등록</h3>

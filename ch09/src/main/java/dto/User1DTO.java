@@ -39,6 +39,7 @@ public class User1DTO {
 	}
 	
 	public void setAge(String age) {
+		
 		if(age != null) {			
 			this.age = Integer.parseInt(age);						
 		}		

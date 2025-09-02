@@ -50,13 +50,15 @@ public class RegisterController extends HttpServlet {
 		System.out.println(dto);
 		
 		// 서비스 요청
-		service.register(dto);
+		int rowCount = service.register(dto);
 		
 		// 응답 JSON 객체 생성
 		JsonObject json = new JsonObject();
-		json.addProperty("result", "1");
+		json.addProperty("result", rowCount);
 		
 		// JSON 출력(클라이언트 전송)
+		resp.setContentType("application/json; charset=UTF-8");
+		
 		PrintWriter out = resp.getWriter();
 		out.print(json.toString());
 	

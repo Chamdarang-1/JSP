@@ -2,30 +2,36 @@ package jboard.dao;
 
 import java.util.List;
 
-import jboard.dto.TermsDTO;
+import jboard.dto.ArticleDTO;
+import jboard.dto.FileDTO;
 import jboard.util.DBHelper;
 
-public class FileDAO extends DBHelper{
+public class FileDAO extends DBHelper {
 	
 	private final static FileDAO INSTANCE = new FileDAO();
 	public static FileDAO getInstance() {
 		return INSTANCE;
-	}
+	}	
 	private FileDAO() {}
 	
-	public void insert(TermsDTO dto) {
+	
+	public void insert(FileDTO dto) {
 		
 	}
-	public TermsDTO select(int no) {
+	
+	public FileDTO select(int fno) {
 		return null;
 	}
-	public List<TermsDTO> selectAll() {
+	
+	public List<FileDTO> selectAll() {
 		return null;
 	}
-	public void update(TermsDTO dto) {
+	
+	public void update(FileDTO dto) {
 		
 	}
-	public void delete(int no) {}
 	
-	
+	public void delete(int fno) {
+		
+	}
 }

@@ -3,29 +3,57 @@ package jboard.dao;
 import java.util.List;
 
 import jboard.dto.ArticleDTO;
+import jboard.dto.TermsDTO;
 import jboard.util.DBHelper;
+import jboard.util.Sql;
 
-public class TermsDAO extends DBHelper{
+public class TermsDAO extends DBHelper {
 	
 	private final static TermsDAO INSTANCE = new TermsDAO();
 	public static TermsDAO getInstance() {
 		return INSTANCE;
-	}
+	}	
 	private TermsDAO() {}
 	
-	public void insert(ArticleDTO dto) {
+	
+	public void insert(TermsDTO dto) {
 		
 	}
-	public ArticleDTO select(int ano) {
+	
+	public TermsDTO select(int no) {
+		
+		TermsDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			
+			psmt = conn.prepareStatement(Sql.SELECT_TERMS);
+			psmt.setInt(1, no);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new TermsDTO();
+				dto.setNo(rs.getInt(1));
+				dto.setTerms(rs.getString(2));
+				dto.setPrivacy(rs.getString(3));
+			}
+			closeAll();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return dto;
+	}
+	
+	public List<TermsDTO> selectAll() {
 		return null;
 	}
-	public List<ArticleDTO> selectAll() {
-		return null;
-	}
-	public void update(ArticleDTO dto) {
+	
+	public void update(TermsDTO dto) {
 		
 	}
-	public void delete(int ano) {}
 	
-	
+	public void delete(int no) {
+		
+	}
 }
