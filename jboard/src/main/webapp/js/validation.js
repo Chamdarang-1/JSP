@@ -3,10 +3,10 @@
  */
 // 유효성 검사에 사용할 정규표현식
 const reUid   = /^[a-z]+[a-z0-9]{4,19}$/g;
-const rePass  = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{5,16}$/;
-const reName  = /^[가-힣]{2,10}$/ 
+const rePass  = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~`!@#$%^*()\-_=+?]).{5,16}$/;
+const reName  = /^[가-힣]{2,10}$/;
 const reNick  = /^[a-zA-Zㄱ-힣0-9][a-zA-Zㄱ-힣0-9]*$/;
-const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+const reEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 const reHp    = /^01(?:0|1|[6-9])-(?:\d{4})-\d{4}$/;
 
 // 유효성 검사 상태 변수
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 	
 	
-	// 이메일 코드 전송 버튼 클릭
+	/* 이메일 코드 전송 버튼 클릭 */
 	btnEmailCode.addEventListener('click', async function(e){
 		
 		const code = form.auth.value;
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			isEmailOk = false;
 		}
 	});
-	
+
 	//////////////////////////////////////////////////////////
 	// 휴대폰 중복 체크
 	//////////////////////////////////////////////////////////
@@ -306,8 +306,5 @@ document.addEventListener('DOMContentLoaded', function(){
 		// 최종 폼 전송 실행
 		form.submit();
 	});
-	
-	
-	
 	
 }); // DOMContentLoaded 끝
