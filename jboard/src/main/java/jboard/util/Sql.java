@@ -2,8 +2,6 @@ package jboard.util;
 
 public class Sql {
 	
-	
-	
 	// terms
 	public static final String SELECT_TERMS = "SELECT * FROM TB_TERMS where NO=?";
 	
@@ -28,14 +26,22 @@ public class Sql {
 													+ "ORDER BY ANO DESC "
 													+ "OFFSET ? ROWS FETCH NEXT 10 ROWS ONLY";
 	
+	public final static String SELECT_ARTICLE_WITH_FILE = "SELECT A.*, U.NICK, F.* FROM TB_ARTICLE A "
+														+ "JOIN TB_USER U ON A.WRITER = U.USID "
+														+ "LEFT JOIN TB_FILE F ON A.ANO = F.ANO "
+														+ "WHERE A.ANO=?";
+	
+	
 	public static final String SELECT_MAX_ANO = "SELECT MAX(ANO) FROM TB_ARTICLE";
 	public static final String INSERT_ARTICLE = "INSERT INTO TB_ARTICLE (TITLE, CONTENT, FILE_CNT, WRITER, REG_IP, WDATE) VALUES (?, ?, ?, ?, ?, SYSDATE)";
 	
+	// comment
+	public static final String INSERT_COMMENT = "INSERT INTO TB_COMMENT (ANO, CONTENT, WRITER, REG_IP, WDATE) VALUES (?, ?, ?, ?, SYSDATE)";
 	
 	// file
 	public static final String INSERT_FILE = "INSERT INTO TB_FILE (ANO, ONAME, SNAME, RDATE) VALUES (?, ?, ?, SYSDATE)";
-	
-	
+	public final static String SELECT_FILE = "SELECT * FROM TB_FILE WHERE fno=?";
+	public final static String UPDATE_FILE_DOWNLOAD = "UPDATE TB_FILE SET DOWNLOAD = DOWNLOAD + 1 WHERE FNO=?";
 	
 	
 	

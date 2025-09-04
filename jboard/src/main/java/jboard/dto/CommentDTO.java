@@ -1,13 +1,14 @@
 package jboard.dto;
 
 public class CommentDTO {
-
+	
 	private int cno;
 	private int ano;
 	private String content;
 	private String writer;
 	private String reg_ip;
 	private String wdate;
+	
 	public int getCno() {
 		return cno;
 	}
@@ -17,9 +18,17 @@ public class CommentDTO {
 	public int getAno() {
 		return ano;
 	}
+	
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
+	
+	public void setAno(String ano) {		
+		if(ano != null) {
+			this.ano = Integer.parseInt(ano);	
+		}		
+	}
+	
 	public String getContent() {
 		return content;
 	}
@@ -51,4 +60,5 @@ public class CommentDTO {
 	}
 	
 	
+
 }

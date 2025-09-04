@@ -13,8 +13,8 @@ public enum CommentService {
 	
 	private CommentDAO dao = CommentDAO.getInstance();
 	
-	public void register(CommentDTO dto) {
-		dao.insert(dto);
+	public int register(CommentDTO dto) {
+		return dao.insert(dto);
 	}	
 	public CommentDTO findById(int cno) {
 		return dao.select(cno);

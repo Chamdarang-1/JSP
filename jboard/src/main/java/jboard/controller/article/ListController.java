@@ -33,7 +33,7 @@ public class ListController extends HttpServlet {
 		int start = pagenationDTO.getStart();
 		List<ArticleDTO> dtoList = articleService.findAll(start);
 		
-		// request 공유참조(JSP에서 출력)
+		// request 공유참조(JSP 출력)
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);		
 		
